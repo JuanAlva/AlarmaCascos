@@ -4,6 +4,8 @@
 #include <SPI.h>
 #include "audio_cascos.h"
 #include "esp_task_wdt.h"
+#include <WiFi.h>
+#include <esp_bt.h>
 
 // Watchdog Timer
 #define WDT_TIMEOUT 25 // Tiempo en segundos
@@ -13,7 +15,7 @@
 
 // Pin para actuador
 #define LED_PIN 2         // Cambiar si se usa otro pin
-//#define LED_ESTADO_CERO 39  // Indicador de estado 0
+#define LED_ESTADO_CERO 33  // Indicador de estado 0
 
 // Dirección MAC del dispositivo (debe ser única en tu red)
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0x00 };
@@ -56,7 +58,7 @@ void generateClientID();
 void setup() {
   Serial.begin(115200);
   Serial.println("Iniciando conexión Ethernet y MQTT...");
-
+    
   // Inicializar el generador de números aleatorios
   randomSeed(analogRead(0));  // Usa una entrada analógica para generar una semilla aleatoria
 
@@ -67,8 +69,8 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, HIGH);    // Inicialmente apagado
 
-  //pinMode(LED_ESTADO_CERO, OUTPUT);
-  //digitalWrite(LED_ESTADO_CERO, HIGH);    // Inicialmente apagado
+  pinMode(LED_ESTADO_CERO, OUTPUT);
+  digitalWrite(LED_ESTADO_CERO, HIGH);    // Inicialmente apagado
 
   // Inicializar el módulo ENC28J60
   Ethernet.init(ETH_CS_PIN);
@@ -126,7 +128,7 @@ void loop() {
   switch (estado) {
     case 0:
       Serial.println("estado 0");
-      //digitalWrite(LED_ESTADO_CERO, LOW);
+      digitalWrite(LED_ESTADO_CERO, LOW);
       digitalWrite(LED_PIN, HIGH);
       if (alarma == 1) {  // Botón presionado
         if (tiempo == 0) {  // Si no se había registrado tiempo
@@ -143,7 +145,7 @@ void loop() {
 
     case 1:
       Serial.println("estado 1");
-      //digitalWrite(LED_ESTADO_CERO, HIGH);
+      digitalWrite(LED_ESTADO_CERO, HIGH);
       digitalWrite(LED_PIN, LOW);
       if (millis()- tiempo >= tiempo_adelanto_circulina) {
         estado = 2;
