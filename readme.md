@@ -42,7 +42,7 @@ El sistema utiliza una dirección IP estática:
 - Tópico: `Alarmas/Cascos`
 - Mensaje de activación esperado: `"sinCasco"`
 
-## Estados del sistema
+## Estados del sistema (Máquina de Estados Finitos)
 
 1. **Estado 0:** Espera de señal (`alarma = 1`). Se descartan falsos positivos (<300 ms).
 2. **Estado 1:** Activación de señal luminosa anticipada.
