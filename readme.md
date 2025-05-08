@@ -1,6 +1,6 @@
 # Alarma de Cascos con ESP32 + ENC28J60 + MQTT
 
-Este proyecto implementa un sistema de alarma para la detección de ausencia de casco de seguridad en una zona industrial (desarrollada por David Ninamancco). El sistema se basa en un ESP32 conectado a una red Ethernet mediante un módulo ENC28J60. Se comunica con un broker MQTT para recibir mensajes de alerta y ejecutar acciones (audio de advertencia y activación de luces).
+Este proyecto implementa un sistema de accionamiento de alarma para señal del sistema la detección de ausencia de casco de seguridad en una zona industrial implementado con Yolo (desarrollo de David Ninamancco). El sistema se basa en un ESP32 conectado a una red Ethernet mediante un módulo ENC28J60. Se comunica con un broker MQTT para recibir mensajes de alerta y ejecutar acciones (audio de advertencia y activación de luces).
 
 ## Características
 
