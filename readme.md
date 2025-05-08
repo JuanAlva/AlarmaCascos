@@ -2,7 +2,9 @@
 
 Este proyecto implementa un sistema de accionamiento de alarma para señal del sistema la detección de ausencia de casco de seguridad en una zona industrial implementado con Yolo (desarrollo de David Ninamancco). El sistema se basa en un ESP32 conectado a una red Ethernet mediante un módulo ENC28J60. Se comunica con un broker MQTT para recibir mensajes de alerta y ejecutar acciones (audio de advertencia y activación de luces).
 
-![WhatsApp Image 2025-05-08 at 09 55 12_d361405a](https://github.com/user-attachments/assets/984914ba-ed1c-472f-be80-1c312c618c47)
+## Diagrama
+
+![diagrama3 drawio](https://github.com/user-attachments/assets/2df72ee6-fadd-4063-be8c-46ea1c3adee6)
 
 ## Características
 
