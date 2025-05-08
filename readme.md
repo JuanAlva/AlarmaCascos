@@ -29,17 +29,17 @@ El sistema utiliza una dirección IP estática:
 
 ### Ejemplo
 
-IP: 192.168.146.207
-Gateway: 192.168.146.1
-DNS: 201.31.108.106
-Subnet: 255.255.255.0
-MAC: DE:AD:BE:EF:FE:00
+- IP: 192.168.146.207
+- Gateway: 192.168.146.1
+- DNS: 201.31.108.106
+- Subnet: 255.255.255.0
+- MAC: DE:AD:BE:EF:FE:00
 
 ## Configuración MQTT
 
 - Servidor: `192.168.252.35`
 - Puerto: `1883`
-- Tema: `Alarmas/Cascos`
+- Tópico: `Alarmas/Cascos`
 - Mensaje de activación esperado: `"sinCasco"`
 
 ## Estados del sistema
@@ -58,15 +58,6 @@ MAC: DE:AD:BE:EF:FE:00
 - `esp_bt.h`
 - `esp_task_wdt.h`
 - Archivo `audio_cascos.h` con la rutina de alerta sonora
-
-## Instalación
-
-1. Instala las siguientes librerías en el entorno de Arduino:
-   - EthernetENC
-   - PubSubClient
-2. Conecta el ENC28J60 al ESP32 (CS en GPIO5, SPI estándar).
-3. Configura el archivo `audio_cascos.h` con la función `audioMascota()`.
-4. Carga el sketch al ESP32 y asegúrate de que el broker MQTT esté operativo.
 
 ## Notas
 
